@@ -1,0 +1,718 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+@font-face {
+    font-family: "Roboto Light";
+    src: url('../font/Roboto-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Roboto Regular";
+    src: url('../font/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Droid Sans";
+    src: url('../font/DroidSans.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url('../font/Raleway-Regular.ttf') format('truetype');
+}
+
+body {
+	font-family: sans-serif;
+	background: white;
+}
+
+
+/* navbar */
+
+.navbar {
+	height: 79px;
+	/* background: rgb(25, 30, 49); */
+	position: fixed;
+	top: 0px;
+	right: 0;
+	left: 0;
+	border-bottom: 0px;
+	z-index: 9999;
+	transition: .6s;
+}
+
+.navbar.black {
+    /* background-color: rgb(25, 30, 49); */
+    background-color: #131313;
+}
+
+.navbar .logo {
+	width: 55px;
+	margin-top: 11px;
+	margin-left: 65px;
+	transition: .2s;
+	cursor: pointer;
+}
+
+.navbar .logo:hover {
+	opacity: 0.7;
+	transform: scale(.9);
+}
+
+.navbar ul {
+	display: flex;
+	margin: 0;
+	padding: 0 65px;
+	float: right;
+	transition: .1s;
+}
+
+.navbar ul li {
+	list-style-type: none;
+}
+
+.navbar ul li a {
+    font-family: "Roboto Light", arial;
+	display: block;
+    color: #fff;
+	padding: 0 20px;
+	text-align: center;
+	line-height: 79px;
+	text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .7);
+	font-weight: bold;
+	transition: .2s;
+	
+}
+
+.navbar ul li a:hover {
+    text-shadow: none;
+    color: #AF8438;
+	/* transform: scale(.9); */
+}
+
+
+/* li facility */
+
+li .facility {
+	display: inline-block;
+}
+
+.facility:hover .isi-facility {
+	display: block;
+}
+
+.isi-facility a:hover {
+
+}
+
+li .isi-facility {
+	font-size: 15px;
+	margin: 0px;
+	padding: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	position: absolute;
+	display: none;
+    z-index: 1;
+    color: white;
+	background-color: #cfa94fff;
+	box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.2);
+	transition: .9s;
+}
+
+.facility .isi-facility a {
+	text-align: left;
+	height: 50px;
+	line-height: 50px;
+    border-bottom: 1px solid #988C67;
+}
+
+li .isi-facility:hover a:hover {
+	transform: none;
+	background-color: rgba(175, 131, 56, 0.623) !important;
+	
+}
+
+
+/* li rooms */
+
+li .rooms {
+	display: inline-block;
+}
+
+.rooms:hover .isi-rooms {
+	display: block;
+}
+
+.isi-rooms a:hover {
+	color: #fff !important;
+}
+
+li .isi-rooms {
+	font-size: 15px;
+	margin: 0px;
+	padding: 0px;
+	padding-top: 0px;
+    padding-bottom: 0px;
+	position: absolute;
+	display: none;
+	z-index: 1;
+	background-color: #cfa94fff;
+	box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.2);
+	transition: .9s;
+}
+
+.rooms .isi-rooms a {
+	text-align: left;
+	height: 50px;
+	line-height: 50px;
+    color: white;
+    border-bottom: 1px solid #988C67;
+
+}
+
+li .isi-rooms:hover a:hover {
+	transform: none;
+	color: white;
+	background-color: rgba(175, 131, 56, 0.623) !important;
+	
+}
+
+
+/* booking now */
+
+.booking-btn {
+    font-family: "Roboto Light", arial;
+	height: 30px;
+	width: 130px;
+	border: 0px;
+	font-size: 15px;
+	font-weight: bold;
+	color: white;
+	background-color: #AF8438;
+	border-radius: 40px;
+	transition: .2s;
+	cursor: pointer;
+}
+
+.booking-btn:hover {
+	opacity: 0.7;
+	transform: scale(.9);
+}
+
+/* slider */
+
+.slider .slider-image {
+    background-image: url(DSResort.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 660px; 
+    overflow: hidden;
+}
+
+.title h1 {
+    font-family: "Droid Sans", arial;
+    color: white;
+    font-size: 70px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 660px;
+    padding: 0px;
+}
+
+.profile  {
+    background-image: url('../img/profile/profile.jpeg');
+    filter: saturation(.3);
+    background-size: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+    display: block;
+    position: absolute;
+    top: 85%;
+    height: 200px;
+    width: 200px;
+    left: 43%;
+}
+
+
+/* biodata */
+
+.biodata {
+    width: 400px;
+    height: 180px;
+    margin: auto;
+    background-color: #AF8438;
+    margin-top: 5px;
+}
+
+.biodata-title  {
+    background-color: #AF8438;
+    border: 1px #AF8438 solid;
+}
+
+.biodata-title h1 {
+    font-family: "Raleway", arial;
+    margin-top: 120px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+    color: white;   
+    font-weight: bold;
+    text-align: center;
+    
+}
+
+.biodata-title-isi {
+    width: 400px;
+    margin: auto;
+    margin-top: 5px;
+    background-color: #AF8438;
+    color: white;
+    text-align: center;
+}
+
+.biodata-title-isi p {
+    font-family: "Raleway", arial;
+    word-spacing: 1px;
+    margin: auto;
+    width: 300px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+
+
+
+
+/* isi */
+
+.about-isi {
+    margin-top: 190px;
+    overflow: hidden;
+}
+
+.about-isi h1 {
+    font-family: "Droid Sans", arial;
+    margin-left: 50px;
+    margin-top: 50px;
+    font-size: 55px;
+    font-weight: bold;
+    color: #cfa94fff;
+}
+
+.about-isi p {
+    font-family: "Raleway", arial;
+    text-align: justify;
+    line-height: 30px;
+    margin-top: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+/* biodata */
+
+
+
+
+
+/* place */
+
+
+.place-gambar {
+    background-image: url('../img/pool/pool4.jpg');
+    height: 500px;
+    width:650px;
+    background-size: cover;
+    background-position: -90px 0;
+    background-repeat: no-repeat;    
+    margin-left: 50px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    float: left;
+    padding-right: 50px;
+}
+
+.place-det {
+    margin-left: 48px;
+}
+
+.place-det h1 {
+    margin-top: 50px;
+    padding-right: 50px;
+}
+
+.place-det p {
+    padding-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 20px;
+}
+
+.place-det ul li {
+    margin-left: 100px;
+    font-family: "Raleway", arial;
+    text-align: justify;
+    margin-right: 50px;
+    list-style-type: disc;
+}
+
+
+/* luxury */
+
+.luxury-gambar {
+    background-image: url("../img/pool/pool5.jpg");
+    height: 500px;
+    width:650px;
+    background-size: cover;
+    margin-left: 50px;
+    margin-top: 0px;
+    margin-right: 50px;
+    margin-bottom: 40px;
+    float: right;
+}
+
+.luxury-det h1 {
+
+}
+
+
+
+
+
+
+/* footer contact */
+/* contact-us */
+
+.our {
+    height: 365px;
+    background-color: #191919;
+}
+
+.our .logo {
+    height: 365px;
+    width: 450px;
+    box-sizing: border-box;
+    float: left;
+}
+
+.our .logo img {
+    margin-left: 130px;
+    margin-top: 80px;
+    width: 200px;
+    height: 200px;
+}
+
+
+/* contact */
+
+.contact {
+    /* border: 1px blue solid; */
+    height: 365px;
+    width: 500px;
+    float: left;
+    box-sizing: border-box;
+ 
+}
+
+.contact-dt {
+    /* border: 1px yellow solid; */
+    width: 400px;
+    margin-top: 105px;
+    margin-left: 50px;
+}
+
+
+/* alamat */
+
+
+.contact-dt .alamat img {
+    width: 16px;
+    height: 16px;
+    float: left;  
+    padding-right: 18px;
+}
+
+.contact-dt .alamat p {
+    font-family: "Roboto Light", arial;
+    word-spacing: 1px;
+    letter-spacing: .8px;
+    font-size: 13px;
+    color: #6F6F6F;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.contact-dt .alamat p:hover {
+    color: wheat;
+}
+
+
+
+/* email  */
+
+.contact-dt .email {
+    margin-top: 25px;
+}
+
+.contact-dt .email img {
+    width: 16px;
+    height: 12px;
+    float: left;  
+    padding-right: 18px;
+}
+
+.contact-dt .email a {
+    text-decoration: none;
+    font-family: "Roboto Light", arial;
+    letter-spacing: .8px;
+    font-size: 13px;
+    color: #6F6F6F;
+    line-height: 16px;
+    transition: .3s;
+}
+
+.contact-dt .email a:hover {
+    color: wheat;
+}
+
+/* twitter */
+
+.contact-dt .twitter {
+    margin-top: 25px;
+}
+
+.contact-dt .twitter img {
+    width: 16px;
+    height: 12px;
+    float: left;  
+    padding-right: 18px;
+}
+
+.contact-dt .twitter a {
+    text-decoration: none;
+    font-family: "Roboto Light", arial;
+    letter-spacing: .8px;
+    font-size: 13px;
+    color: #6F6F6F;
+    line-height: 16px;
+    transition: .3s;
+}
+
+.contact-dt .twitter a:hover {
+    color: wheat;
+}
+
+
+/* instagram */
+
+.contact-dt .instagram {
+    margin-top: 25px;
+}
+
+.contact-dt .instagram img {
+    width: 16px;
+    height: 15px;
+    float: left;  
+    padding-right: 18px;
+}
+
+.contact-dt .instagram a {
+    text-decoration: none;
+    font-family: "Roboto Light", arial;
+    letter-spacing: .8px;
+    font-size: 13px;
+    color: #6F6F6F;
+    line-height: 16px;
+    transition: .3s;
+}
+
+.contact-dt .instagram a:hover {
+    color: wheat;
+}
+
+
+
+/* phone */
+
+.contact-dt .phone {
+    margin-top: 25px;
+}
+
+.contact-dt .phone img {
+    width: 16px;
+    height: 18px;
+    float: left;  
+    padding-right: 18px;
+}
+
+.contact-dt .phone p {
+    font-family: "Roboto Light", arial;
+    font-size: 13px;
+    word-spacing: 1px;
+    letter-spacing: .8px;
+    color: #6F6F6F;
+    line-height: 22px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.contact-dt .phone p:hover {
+    color: wheat;
+}
+
+/* Sign in */
+
+.info {
+    /* border: 1px solid green; */
+    height: 365px;
+    width: 397px;
+    float: left;
+    box-sizing: border-box;
+}
+
+.info .sign-in {
+    background: none;
+    color: white;
+    width: 245px;
+    margin-top: 80px;
+    margin-left: 55px;
+}
+
+.sign-in .sign-in-info {
+    margin-top: 30px;
+    font-size: 13px;
+}
+
+.sign-in p {
+    color: #6F6F6F;
+}
+
+.sign-in-det {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+
+.sign-in input{
+    margin-top: 5px;
+    border: none;
+    background: #292624;
+    width: 220px;
+    height: 26px;
+    border-radius: 20px;
+
+}
+
+.sign-in #username {
+    color: wheat;
+    padding-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.sign-in #password {
+    color: wheat;
+    padding-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.sign-in .kirim-btn {
+    background-color: #AF8438;
+    color: rgb(238, 238, 238);
+    font-weight: bold;
+    width: 100px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.sign-in .kirim-btn:hover {
+    opacity: .8;
+}
+
+
+/* footer copyright */
+
+.copyright {
+    width: 100%;
+    height: 73px;
+    background-color: #141414;
+}
+
+.copyright p {
+    text-align: center;
+    line-height: 73px;
+    color: #646464;
+    font-family: arial;
+    font-size: 18px;
+}
+
+
+/* clearfix */
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+
+
